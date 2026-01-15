@@ -1,5 +1,52 @@
 @import "reset.css";
 
+
 img {
     width: 250px;
+}
+
+.hero {
+    position: relative;
+}
+
+.hero h2{
+    text-align: center;
+    margin: 2rem;
+}
+
+.hero-illustration {
+    width: 100%;
+    height: auto;
+    opacity: 0.45;
+}
+
+.brand {
+    position: absolute;
+
+    left: 35%;
+    top: 28%;
+    transform: translate(-50%, -50%);
+
+    font-size: clamp(2.5rem, 10vw, 10rem);
+
+    z-index: 2;
+}
+
+.block-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 60vh;
+    margin: 5rem;
+}
+
+.text-gauche{
+    text-align: left;
+    max-width: 620px;
+}
+
+.text-droite{
+    text-align: left;
+    max-width: 480px;
+    margin-left: auto;
 }

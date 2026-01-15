@@ -1,100 +1,136 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="src/main.js" type="module" defer></script>
+<html lang="fr">
 
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AuditCom</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="src/main.js" type="module" defer></script>
 </head>
+
 <body>
 
     <header class="hero">
-    <h1 class="brand">AuditCom</h1>
-    <img src="assets/hero-players.svg" alt="" class="hero-illustration">
-</header>
+        <h1 class="brand">AuditCom</h1>
+        <img src="images_siteweb/carlos-torres-oOt9hf8XGEQ-unsplash.png" alt="Illustration AuditCom"
+            class="hero-illustration" />
+        <h2>Boostez votre stratégie sport-business grâce à l'analyse digitale exclusive des clubs suisses romands</h2>
+    </header>
+
+    <main>
+
+        <!-- INTRO -->
+        <section class="block-text">
+
+            <div class="text-gauche">
+                <h2>28 clubs analysés</h2>
+                <p>À l’ère du digital, l’engagement des supporters et la visibilité des partenaires se jouent en ligne.
+                    L’analyse de l’écosystème numérique n’est plus optionnelle : c’est un levier stratégique pour
+                    assurer la pérennité financière des clubs. Notre audit examine la performance digitale de plus de 30
+                    clubs suisses, en comparant leurs pratiques aux standards du marketing sportif. En analysant médias
+                    possédés, gagnés et partagés, nous montrons comment transformer une simple vitrine en une expérience
+                    immersive qui fédère la communauté et maximise la valeur des partenariats.
+                    Téléchargez ce rapport exclusif pour découvrir les clés d’une transition numérique réussie, du
+                    terrain de village à la Super League.
+                </p>
+            </div>
+
+            <!-- (Optionnel) si tu veux la 2e colonne de texte comme sur la maquette -->
+            <div class="text-droite">
+                <p> Dans ce rapport</p>
+                <p>
+                    Écosystème digital - Storytelling - Conversion - Engagement - Monétisation - Phygital - SEO -
+                    Responsive - Accessibilité - Performance - Super League - Pyramide du football - Ancrage régional -
+                    Swiss Football League - Méta-étude </p>
+            </div>
+        </section>
 
 
-<!-- INTRO -->
-<section class="intro">
-    <div class="intro-number">29</div>
-    <div class="intro-text">
-        <h2>Analyse de l’écosystème digital</h2>
-        <p>
-            Analyse approfondie des réseaux sociaux, de la formation
-            et des stratégies digitales des clubs de football suisses.
-        </p>
-    </div>
-</section>
+        <!-- CLUBS (dans la maquette ça ressemble à un bandeau) -->
+        <section class="clubs-strip" aria-label="Clubs analysés">
+            <span>SR Delémont</span>
+            <span>Étoile Carouge</span>
+            <span>FC Ajoie-Monterri</span>
+        </section>
 
+        <!-- STATS 1 -->
+        <section class="stats-visual">
+            <h2>Chiffres les plus impactants des réseaux sociaux</h2>
+            <div class="stats-placeholder">
+                <!-- SVG/canvas -->
+            </div>
+        </section>
 
-<!-- CLUBS -->
-<section class="clubs-strip">
-    <span>SR Delémont</span>
-    <span>Étoile Carouge</span>
-    <span>FC Ajoie-Monterri</span>
-</section>
+        <section class="block-text">
 
+            <div class="text-gauche">
+                <h2>450 millions</h2>
+                <p>de francs suisses pour la construction de son nouveau stade à l'horizon 2030, pour le FC sion</p>
+            </div>
 
-<!-- STATS -->
-<section class="stats-visual">
-    <h2>Chiffres les plus impactants</h2>
-    <div class="stats-placeholder">
-        <!-- ici plus tard SVG ou canvas -->
-    </div>
-</section>
+            <!-- (Optionnel) si tu veux la 2e colonne de texte comme sur la maquette -->
+            <div class="text-droite">
+                <h2>34 équipes</h2>
+                <p>au sein du CS Chênois qui gère une structure massive</p>
+            </div>
+        </section>
 
-<!-- CTA -->
-<section class="cta">
-    <button class="cta-button">Télécharger le document</button>
-    <img src="assets/goalkeeper.svg" alt="" class="cta-illustration">
-</section>
+        <!-- STATS 2 (dans ta maquette: “Ancienneté”) -->
+        <section class="stats-visual">
+            <h2>Ancienneté</h2>
+            <div class="stats-placeholder">
+                <!-- SVG/canvas -->
+            </div>
+        </section>
 
+        <section class="block-text">
 
-<!-- LISTE DYNAMIQUE (AuditCom obligatoire) -->
-<section class="teams">
-    <h2>Analyses disponibles pour <span data-bind-global="count"></span> clubs</h2>
-    <div id="teamList" class="team-grid"></div>
-</section>
+            <div class="text-gauche">
+                <h2>150 000 visiteurs par an</h2>
+                <p>sur le site internet officiel d'Yverdon Sport FC</p>
+            </div>
 
+            <!-- (Optionnel) si tu veux la 2e colonne de texte comme sur la maquette -->
+            <div class="text-droite">
+                <h2>12 700 places</h2>
+                <p>au Stade de la Charrière ou évolue FC La Chaux-de-Fonds</p>
+            </div>
+        </section>
 
+        <!-- CTA -->
+        <section class="cta">
+            <button class="cta-button" type="button">Télécharger le document</button>
+            <img src="images_siteweb/adib-sulthon-firdaous-7pPElEnZCiU-unsplash.png" alt="" class="cta-illustration" />
+        </section>
 
+        <!-- LOGOS / LISTE DYNAMIQUE (AuditCom obligatoire) -->
+        <section class="teams">
+            <h2>Analyses disponibles pour <span data-bind-global="count"></span> clubs</h2>
+            <div id="teamList" class="team-grid"></div>
+        </section>
 
+        <!-- FORMULAIRE (AuditCom obligatoire) -->
+        <section class="form-section">
+            <h2>Formulaire</h2>
+            <div id="messageContainer"></div>
 
-<!-- FORMULAIRE (AuditCom obligatoire) -->
-<section class="form-section">
-    <h2>Formulaire</h2>
-    <div id="messageContainer"></div>
+            <form id="downloadForm">
+                <input type="email" name="email" placeholder="Mail" required />
+                <input type="text" name="firstName" placeholder="Prénom" required />
+                <input type="text" name="lastName" placeholder="Nom" required />
 
-    <form id="downloadForm">
-        <input type="email" name="email" placeholder="Mail" required>
-        <input type="text" name="firstName" placeholder="Prénom" required>
-        <input type="text" name="lastName" placeholder="Nom" required>
+                <label>
+                    <input type="checkbox" name="newsletterAgreement" required />
+                    J’accepte la newsletter
+                </label>
 
-        <label>
-            <input type="checkbox" name="newsletterAgreement" required>
-            J’accepte la newsletter
-        </label>
+                <button type="submit">Télécharger</button>
+            </form>
+        </section>
 
-        <button type="submit">Télécharger</button>
-    </form>
-</section>
-
-    <!-- data-bind-global="count" : Affiche le nombre total de rapports (métadonnées globales) -->
-    <h1 data-bind-global="count"></h1>
-    <p>tesdwerettest</p>
-    
-    <!-- id="teamList" : Conteneur où seront ajoutés dynamiquement les éléments de l'équipe. Le nom de cet ID ne doit pas être modifié. -->
-    <section id="teamList">
-    </section>
-
-    <!-- id="messageContainer" : Conteneur pour afficher les messages de succès ou d'erreur. Le nom de cet ID ne doit pas être modifié. -->
-    <div id="messageContainer"></div>
-
-    <!-- id="downloadForm" : Formulaire pour télécharger le PDF. Le nom de cet ID ne doit pas être modifié. -->
-    <form id="downloadForm">
-    </form> 
+    </main>
 
 </body>
+
 </html>
