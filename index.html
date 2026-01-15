@@ -55,13 +55,7 @@
 <section class="clubs">
   <h2>Clubs analysés</h2>
   <div id="teams-container"></div>
-  <div class="team-card">
-  <div class="team-logo">Blason</div>
-  <h3>{{name}}</h3>
-  <p>{{city}} – {{canton}}</p>
-  <p>{{level}}</p>
-</div>
-
+  
 </section>
 
 <!-- data-bind-global="count" : Affiche le nombre total de rapports (métadonnées globales) -->
@@ -77,6 +71,27 @@
     <!-- id="downloadForm" : Formulaire pour télécharger le PDF. Le nom de cet ID ne doit pas être modifié. -->
     <form id="downloadForm">
     </form>
+
+    <form id="downloadForm">
+        <input type="text" name="lastName" placeholder="Nom">
+        <input type="text" name="firstName" placeholder="Prénom">
+        <input type="email" name="email" placeholder="Email">
+        <input type="checkbox" name="newsletterAgreement" id="consent">
+        <label for="consent">J'accepte de recevoir la newsletter</label>
+        <button type="submit">Télécharger</button>
+    </form>
+</main>
+<footer>
+    <section>
+        <h1>Contact</h1>
+        <p>📧 rapport@football-digital.ch</p>
+        <p>Tel : xxx xxx xx xx</p>
+        <p>📍 Yverdon-les-Bains, Suisse</p>
+    </section>
+    <hr>
+    <p>© 2025 Écosystème Digital du Football Suisse. Tous droits réservés | Respect de la propriété intellectuelle des
+        clubs analysés</p>
+</footer>
 
 </body>
 </html>
