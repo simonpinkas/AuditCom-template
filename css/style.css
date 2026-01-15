@@ -177,3 +177,6 @@ section#teamList > div {
     object-position: center 80%;
   }
 }
+img {
+    width: 250px;
+}
