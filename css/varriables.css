@@ -1,0 +1,9 @@
+:root {
+    --whitespace: 3vw;
+}
+
+@media screen and (width >=600px) {
+    :root {
+        --whitespace: 5vw;
+    }
+}

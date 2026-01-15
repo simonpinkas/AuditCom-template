@@ -1,27 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>État du football Romand</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="src/main.js" type="module" defer></script>
 
 </head>
+
 <body>
-    <!-- data-bind-global="count" : Affiche le nombre total de rapports (métadonnées globales) -->
-    <h1 data-bind-global="count"></h1>
-    
-    <!-- id="teamList" : Conteneur où seront ajoutés dynamiquement les éléments de l'équipe. Le nom de cet ID ne doit pas être modifié. -->
-    <section id="teamList">
+
+    <section id="hero">
+        <video autoplay muted loop id="soccer-video">
+            <source src="./assets/videos/field_soccer.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <h1 class="big-text uppercase" id="state">État du football Romand</h1>
+
+            <p id="made-by">Par Chibani Baya et Juillet Mikael</p>
+
+            <p class="big-text" id="year">2026</p>
+        </div>
     </section>
 
-    <!-- id="messageContainer" : Conteneur pour afficher les messages de succès ou d'erreur. Le nom de cet ID ne doit pas être modifié. -->
-    <div id="messageContainer"></div>
+    <section class="introduction">
+        <h2>Introduction</h2>
 
-    <!-- id="downloadForm" : Formulaire pour télécharger le PDF. Le nom de cet ID ne doit pas être modifié. -->
-    <form id="downloadForm">
-    </form>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, magnam asperiores voluptatibus debitis
+            dolore soluta itaque tempora? Provident consectetur, itaque quaerat nam corporis, dolorem magnam commodi
+            dicta explicabo tempore porro.
+        </p>
+
+        <a href="#download">Télécharger le rapport</a>
+    </section>
+
+    <!-- data-bind-global="count" : Affiche le nombre total de rapports (métadonnées globales) -->
+    <!-- <p data-bind-global="count"></p> -->
+
+    <!-- id="teamList" : Conteneur où seront ajoutés dynamiquement les éléments de l'équipe. Le nom de cet ID ne doit pas être modifié. -->
+    <section id="teamList">
+        <h2>Rapports</h2>
+    </section>
+
+    <section class="form" id="download">
+        <h2>Télécharger le rapport</h2>
+
+        <!-- id="messageContainer" : Conteneur pour afficher les messages de succès ou d'erreur. Le nom de cet ID ne doit pas être modifié. -->
+        <div id="messageContainer"></div>
+
+        <!-- id="downloadForm" : Formulaire pour télécharger le PDF. Le nom de cet ID ne doit pas être modifié. -->
+        <form id="downloadForm">
+            <input type="text" name="lastName" placeholder="Nom">
+            <input type="text" name="firstName" placeholder="Prénom">
+            <input type="email" name="email" placeholder="Email">
+            <input type="checkbox" name="newsletterAgreement" id="consent">
+            <label for="consent">J'accepte de recevoir la newsletter</label>
+            <button type="submit">Télécharger</button>
+        </form>
+    </section>
+
+    <footer>
+        <a href="https://heig-vd.ch/"><img src="./assets/images/HEIG-VD_logotype_rouge-rvb.svg" alt="HEIG-VD logo."></a>
+        <address>
+            Vous pouvez contacter les auteurs aux adresses <br />
+            <a href="mailto:mikael.juillet@heig-vd.ch">mikael.juillet@heig-vd.ch</a><br />
+            <a href="mailto:baya.chibani@heig-vd.ch">baya.chibani@heig-vd.ch</a><br />
+            Ou via github
+            <a href="https://github.com/JuilletMikael/AuditCom">github.com/JuilletMikael/AuditCom</a>
+        </address>
+    </footer>
 
 </body>
+
 </html>
