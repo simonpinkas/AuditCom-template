@@ -30,6 +30,14 @@ section#hero {
     }
 }
 
+section#introduction {
+    display: flex;
+    flex-direction: column;
+    div {
+        margin: 3rem 0;
+    }
+}
+
 @media screen and (width >=600px) {
     section#hero {
         .hero-content {

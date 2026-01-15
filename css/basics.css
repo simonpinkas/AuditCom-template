@@ -7,8 +7,18 @@ body {
     font-size: var(--fs-base);
 }
 
-h2 {
+h2, .button {
     text-transform: uppercase;
+    padding: 0.4rem 0.7rem;
+    background-color: var(--black);
+    color: var(--white);
+    width: fit-content;
+    border-radius: var(--corner-radius);
+    margin-bottom: 1rem;
+}
+
+img {
+    width: 250px;
 }
 
 .uppercase {
@@ -28,4 +38,26 @@ section {
     html {
         font-size: 18px;
     }
+}
+
+.ligne {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    > * {
+         flex: 1 0 300px;
+    }
+}
+
+.button {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  text-decoration: none;
+}
+.button:hover {
+  background-color: #7a7a7a;
+}
+
+.centred {
+    margin: auto;
 }
