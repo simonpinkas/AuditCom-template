@@ -2,6 +2,7 @@ section#hero {
     margin: 0;
     position: relative;
     height: 100vh;
+    color: var(--white);
 
     .hero-content {
         padding: var(--whitespace);
@@ -30,6 +31,44 @@ section#hero {
     }
 }
 
+section#introduction {
+
+    div {
+        margin: 3rem 0;
+    }
+
+    p {
+        display: block;
+        max-width: 50vw;
+        font-size: 1.5rem;
+    }
+}
+
+section#key-numbers {
+    div {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+
+        article {
+            min-height: 200px;
+            padding: 2rem;
+            text-align: center;
+            aspect-ratio: 1;
+            background-color: var(--black);
+            color: var(--white);
+            flex: 0 0 300px;
+            align-content: space-around;
+
+            p,
+            h3 {
+                display: block;
+            }
+        }
+    }
+}
+
 @media screen and (width >=600px) {
     section#hero {
         .hero-content {
@@ -37,15 +76,15 @@ section#hero {
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: repeat(2, 1fr);
             grid-template-areas:
-            "state state ."
-            "bottom-left . bottom-right"
+                "state state ."
+                "bottom-left . bottom-right"
             ;
 
             #state {
                 grid-area: state;
             }
 
-            #made-by{
+            #made-by {
                 grid-area: bottom-left;
                 align-self: flex-end;
             }
@@ -58,4 +97,3 @@ section#hero {
         }
     }
 }
- 
