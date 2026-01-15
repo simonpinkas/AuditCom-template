@@ -1,27 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Football Romand - AuditCom</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="src/main.js" type="module" defer></script>
-
 </head>
+
 <body>
-    <!-- data-bind-global="count" : Affiche le nombre total de rapports (métadonnées globales) -->
-    <h1 data-bind-global="count"></h1>
-    
-    <!-- id="teamList" : Conteneur où seront ajoutés dynamiquement les éléments de l'équipe. Le nom de cet ID ne doit pas être modifié. -->
-    <section id="teamList">
+    <!-- Hero -->
+    <div id="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-prefix">L'état du football romand</h1>
+            </div>
+            <div class="hero-icon">
+                <svg viewBox="0 0 120 120" width="150" height="150">
+                    <circle cx="60" cy="60" r="54" fill="none" stroke="#4a5a3a" stroke-width="5"/>
+                    <path d="M60 6 L100 30 L100 90 L60 114 L20 90 L20 30 Z" fill="none" stroke="#4a5a3a" stroke-width="4"/>
+                    <line x1="60" y1="6" x2="60" y2="114" stroke="#4a5a3a" stroke-width="3"/>
+                    <line x1="20" y1="30" x2="100" y2="90" stroke="#4a5a3a" stroke-width="3"/>
+                    <line x1="100" y1="30" x2="20" y2="90" stroke="#4a5a3a" stroke-width="3"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section Intro -->
+    <section class="intro">
+        <h2>Toutes les informations dont<br>vous avez besoins.</h2>
+        <p class="subtitle">Le rapport complet</p>
+        <button class="btn-download">Download</button>
     </section>
 
-    <!-- id="messageContainer" : Conteneur pour afficher les messages de succès ou d'erreur. Le nom de cet ID ne doit pas être modifié. -->
+    <!-- Compteur -->
+    <div id="compteur">
+        <div class="compteur-icon">
+            <svg viewBox="0 0 140 100" width="120" height="85">
+                <rect x="5" y="5" width="130" height="90" rx="3" fill="none" stroke="#3a4a2a" stroke-width="4"/>
+                <line x1="70" y1="5" x2="70" y2="95" stroke="#3a4a2a" stroke-width="3"/>
+                <circle cx="70" cy="50" r="12" fill="none" stroke="#3a4a2a" stroke-width="3"/>
+                <rect x="5" y="28" width="22" height="44" fill="none" stroke="#3a4a2a" stroke-width="3"/>
+                <rect x="113" y="28" width="22" height="44" fill="none" stroke="#3a4a2a" stroke-width="3"/>
+                <circle cx="32" cy="50" r="3" fill="#3a4a2a"/>
+                <circle cx="108" cy="50" r="3" fill="#3a4a2a"/>
+            </svg>
+        </div>
+        <div class="compteur-text">
+            <h3><span data-bind-global="count"></span> Clubs analysés</h3>
+            <p>Allant du petit club de village aux plus grands club de la région.</p>
+        </div>
+    </div>
+
+    <!-- Stats -->
+    <div id="stats">
+        <div class="stats-left">
+            <h3>4 statistiques Importante</h3>
+            <div class="stats-grid">
+                <div class="stat-box">Dependents</div>
+                <div class="stat-box">Dependents</div>
+                <div class="stat-box">Dependents</div>
+                <div class="stat-box">Dependents</div>
+            </div>
+        </div>
+        <div class="stats-icon">
+            <svg viewBox="0 0 160 120" width="150" height="110">
+                <polyline points="10,100 50,55 95,75 150,25" fill="none" stroke="#3a4a2a" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Equipes -->
+    <div id="equipes">
+        <h3>Liste des Clubs analysés</h3>
+        <section id="teamList"></section>
+    </div>
+
+    <!-- Messages -->
     <div id="messageContainer"></div>
 
-    <!-- id="downloadForm" : Formulaire pour télécharger le PDF. Le nom de cet ID ne doit pas être modifié. -->
-    <form id="downloadForm">
-    </form>
+    <!-- Formulaire -->
+    <section class="form-section">
+        <form id="downloadForm">
+            <button class="close-btn">&times;</button>
+            <div class="form-row">
+                <input type="text" name="lastName" placeholder="Nom" required>
+                <input type="text" name="firstName" placeholder="Prénom" required>
+            </div>
+            <input type="email" name="email" placeholder="Email" required>
+            <label class="checkbox">
+                <input type="checkbox" name="newsletterAgreement">
+                J'accepte de recevoir la newsletter
+            </label>
+            <button type="submit" class="btn-download">Télécharger le rapport</button>
+        </form>
+    </section>
 
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <h4>Nom agence</h4>
+                <p>Chemin des Peuplier 14</p>
+                <p>1765 Nyon</p>
+            </div>
+            <div class="footer-right">
+                <h4>Contacts :</h4>
+                <p>Adresse@email.ch</p>
+                <p>+41 00 000 00 00</p>
+            </div>
+        </div>
+    </footer>
 </body>
+
 </html>

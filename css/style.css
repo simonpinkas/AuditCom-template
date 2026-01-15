@@ -1,5 +1,357 @@
 @import "reset.css";
 
-img {
-    width: 250px;
+:root {
+    --bg: #f5f5f0;
+    --card: #DDE7C3;
+    --dark: #3a4a2a;
+    --accent: #4a5a3a;
+    --white: #ffffff;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+}
+
+/* Hero */
+#hero {
+    width: 100%;
+    background-color: var(--card);
+    border-radius: 10px;
+    padding: 30px 40px;
+    box-sizing: border-box;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-prefix {
+    font-size: 20px;
+    margin: 0;
+    color: var(--dark);
+}
+
+.hero-text h1 {
+    font-size: 42px;
+    font-weight: 400;
+    margin: 0;
+    color: var(--dark);
+}
+
+/* Intro */
+.intro {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.intro h2 {
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--dark);
+    margin: 0 0 10px 0;
+}
+
+.subtitle {
+    color: #777;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.btn-download {
+    padding: 14px 40px;
+    border: none;
+    border-radius: 25px;
+    background-color: var(--dark);
+    color: var(--white);
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* Compteur */
+#compteur {
+    background-color: var(--card);
+    border-radius: 10px;
+    padding: 35px 40px;
+    margin-bottom: 20px;
+    margin-right: 30%;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    height: 250px;
+}
+
+.compteur-text h3 {
+    font-size: 22px;
+    margin: 0 0 8px 0;
+    color: var(--dark);
+}
+
+.compteur-text p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+}
+
+/* Stats */
+#stats {
+    background-color: var(--card);
+    border-radius: 10px;
+    padding: 35px 40px;
+    margin-bottom: 20px;
+    margin-left: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stats-left h3 {
+    font-size: 22px;
+    font-style: italic;
+    margin: 0 0 20px 0;
+    color: var(--dark);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 120px);
+    gap: 14px;
+}
+
+.stat-box {
+    background: var(--white);
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 10px 16px;
+    text-align: center;
+    color: #777;
+    font-size: 13px;
+}
+
+/* Equipes */
+#equipes {
+    background-color: var(--card);
+    border-radius: 10px;
+    padding: 25px 30px;
+    margin-bottom: 30px;
+    margin-right: 30%;
+}
+
+#equipes h3 {
+    font-size: 20px;
+    margin: 0 0 18px 0;
+    color: var(--dark);
+}
+
+#teamList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 10px;
+}
+
+#teamList article {
+    background: var(--white);
+    border: 1px solid #e0e0e0;
+    border-radius: 50px;
+    padding: 8px 12px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+#teamList article img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    border-radius: 2px;
+}
+
+#teamList article h2 {
+    font-size: 10px;
+    font-weight: 500;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--dark);
+}
+
+#teamList article p {
+    display: none;
+}
+
+/* Messages */
+#messageContainer {
+    margin: 20px 0;
+}
+
+.message {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.message.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.message.loading {
+    background: #e3f2fd;
+    color: #1565c0;
+    border: 1px solid #90caf9;
+}
+
+.progress-container {
+    margin-top: 10px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+}
+
+/* Form */
+.form-section {
+    padding: 10px 0 40px;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+.form-section.active{
+    display: flex;
+}
+.close-btn {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.close-btn:hover {
+    background: #e0e0e0;
+    color: var(--accent);
+}
+#downloadForm {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: var(--white);
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+#downloadForm input[type="text"],
+#downloadForm input[type="email"] {
+    padding: 14px 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    background: var(--white);
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #666;
+    font-size: 14px;
+}
+
+#downloadForm button {
+    margin-top: 10px;
+}
+
+/* Footer */
+footer {
+    background: var(--accent);
+    color: var(--white);
+    padding: 35px 40px;
+    
+    margin-top: 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 660px;
+    margin: 0 auto;
+}
+
+footer h4 {
+    font-size: 22px;
+    margin: 0 0 12px 0;
+    font-weight: 600;
+}
+
+footer p {
+    margin: 4px 0;
+    font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+
+    #compteur {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #stats {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 25px;
+    }
 }
