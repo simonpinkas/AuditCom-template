@@ -1,0 +1,24 @@
+@import "reset.css";
+@font-face {
+    font-family: "Diatype";
+    src: url(../fonts/font/diatype-var.woff2);
+}
+
+@font-face {
+    font-family: "Trial";
+    src: url(../fonts/font/ABCProphetVariable-Trial.woff2);
+}
+
+
+p {
+    font-family: "Diatype";
+}
+
+h2 {
+   font-family: "Trial";
+}
+
+h1 {
+   font-family: "Trial";
+   font-size: 45px;
+}
