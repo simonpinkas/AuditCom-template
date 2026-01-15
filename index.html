@@ -9,8 +9,81 @@
 
 </head>
 <body>
+
+    <header class="hero">
+    <h1 class="brand">AuditCom</h1>
+    <img src="assets/hero-players.svg" alt="" class="hero-illustration">
+</header>
+
+
+<!-- INTRO -->
+<section class="intro">
+    <div class="intro-number">29</div>
+    <div class="intro-text">
+        <h2>Analyse de l’écosystème digital</h2>
+        <p>
+            Analyse approfondie des réseaux sociaux, de la formation
+            et des stratégies digitales des clubs de football suisses.
+        </p>
+    </div>
+</section>
+
+
+<!-- CLUBS -->
+<section class="clubs-strip">
+    <span>SR Delémont</span>
+    <span>Étoile Carouge</span>
+    <span>FC Ajoie-Monterri</span>
+</section>
+
+
+<!-- STATS -->
+<section class="stats-visual">
+    <h2>Chiffres les plus impactants</h2>
+    <div class="stats-placeholder">
+        <!-- ici plus tard SVG ou canvas -->
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+    <button class="cta-button">Télécharger le document</button>
+    <img src="assets/goalkeeper.svg" alt="" class="cta-illustration">
+</section>
+
+
+<!-- LISTE DYNAMIQUE (AuditCom obligatoire) -->
+<section class="teams">
+    <h2>Analyses disponibles pour <span data-bind-global="count"></span> clubs</h2>
+    <div id="teamList" class="team-grid"></div>
+</section>
+
+
+
+
+
+<!-- FORMULAIRE (AuditCom obligatoire) -->
+<section class="form-section">
+    <h2>Formulaire</h2>
+    <div id="messageContainer"></div>
+
+    <form id="downloadForm">
+        <input type="email" name="email" placeholder="Mail" required>
+        <input type="text" name="firstName" placeholder="Prénom" required>
+        <input type="text" name="lastName" placeholder="Nom" required>
+
+        <label>
+            <input type="checkbox" name="newsletterAgreement" required>
+            J’accepte la newsletter
+        </label>
+
+        <button type="submit">Télécharger</button>
+    </form>
+</section>
+
     <!-- data-bind-global="count" : Affiche le nombre total de rapports (métadonnées globales) -->
     <h1 data-bind-global="count"></h1>
+    <p>tesdwerettest</p>
     
     <!-- id="teamList" : Conteneur où seront ajoutés dynamiquement les éléments de l'équipe. Le nom de cet ID ne doit pas être modifié. -->
     <section id="teamList">
