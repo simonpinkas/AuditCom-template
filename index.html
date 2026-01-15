@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,20 +9,82 @@
     <script src="src/main.js" type="module" defer></script>
 
 </head>
+
 <body>
-    <!-- data-bind-global="count" : Affiche le nombre total de rapports (métadonnées globales) -->
-    <h1 data-bind-global="count"></h1>
-    
-    <!-- id="teamList" : Conteneur où seront ajoutés dynamiquement les éléments de l'équipe. Le nom de cet ID ne doit pas être modifié. -->
-    <section id="teamList">
-    </section>
+    <header>
+        <div class="logo">
+            <img>
+        </div>
+        <nav>
+            <ul>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div class="grid">
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+            </div>
+        </section>
+        <!-- marquee animation -->
+        <section>
+            <h2>Pause on hover</h2>
+            <input id="enable-animation-3" type="checkbox" />
+            <label for="enable-animation-3">Enable animation</label>
 
-    <!-- id="messageContainer" : Conteneur pour afficher les messages de succès ou d'erreur. Le nom de cet ID ne doit pas être modifié. -->
-    <div id="messageContainer"></div>
+            <div class="marquee marquee--hover-pause">
+                <ul class="marquee__content">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                </ul>
 
-    <!-- id="downloadForm" : Formulaire pour télécharger le PDF. Le nom de cet ID ne doit pas être modifié. -->
-    <form id="downloadForm">
-    </form>
+                <ul aria-hidden="true" class="marquee__content">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                </ul>
+            </div>
+        </section>
+        <section id="formulaire">
+            <h2>Téléchargez le rapport</h2>
+            <form action="/submit" method="POST">
+                <label for="firstName">Prénom</label>
+                <input type="text" id="firstName" name="firstName" required>
 
+                <label for="lastName">Nom de famille</label>
+                <input type="text" id="lastName" name="lastName" required>
+
+                <label for="email">Adresse email</label>
+                <input type="email" id="email" name="email" required>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="newsletterAgreement" name="newsletterAgreement" required>
+                    <label for="newsletterAgreement">J'accepte de recevoir la newsletter pour télécharger le
+                        rapport</label>
+                </div>
+
+                <button type="submit">Télécharger le rapport</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Contactez-nous : <a href="mailto:contact@example.com">eva.avilamun@hes-so.ch</a></p>
+    </footer>
 </body>
+
 </html>

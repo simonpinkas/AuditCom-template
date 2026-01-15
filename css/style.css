@@ -1,5 +1,6 @@
 @import "reset.css";
-
+@import "Layout.css";
+@import "animation.css";
 img {
     width: 250px;
 }
