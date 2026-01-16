@@ -244,10 +244,8 @@ main>section {
 
 /* Stop l'animation quand on survole la zone du slider */
 .team-slider-wrapper:hover .team-slider {
-  animation-play-state: paused;
+    animation-play-state: paused;
 }
-
-
 
 
 .team-slider .team-item {
