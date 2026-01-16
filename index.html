@@ -1,27 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Analyse de l’écosystème digital des clubs de football en Suisse romande. Réseaux sociaux, sites web, visibilité et opportunités marketing. Rapport gratuit.">
+    <!-- apparaît dans google-->
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="src/main.js" type="module" defer></script>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+</style>
 
-</head>
-<body>
-    <!-- data-bind-global="count" : Affiche le nombre total de rapports (métadonnées globales) -->
-    <h1 data-bind-global="count"></h1>
-    
-    <!-- id="teamList" : Conteneur où seront ajoutés dynamiquement les éléments de l'équipe. Le nom de cet ID ne doit pas être modifié. -->
-    <section id="teamList">
+  </head>
+  <body>
+
+    <header>
+      <video autoplay muted loop id="bg-video" class="bg-video">
+        <source src="4729195-hd_1920_1080_25fps.mp4" type="video/mp4">
+      </video>
+      <div class="hero">
+        <h1>Le Football Suisse Régional joue sur le terrain du digital</h1>
+        <p>Tout ce que vous voulez savoir sur la présence en ligne des clubs de foot Romands, réuni au même endroit.</p>
+        <a href="#downloadForm" class="btn-primary">Aller au formulaire</a>
+      </div>
+    </header>
+
+    <main>
+      
+      <section class="stats-maquette">
+  <div class="stats-left">
+    <h2>Que contient ce rapport&nbsp;?</h2>
+  </div>
+
+  <div class="stats-right">
+    <img src="pexels-tima-miroshnichenko-6078298.jpg" alt="Football Suisse Romande" class="stats-bg">
+
+    <div class="bubble bubble-1">
+      <strong data-bind-global="count"></strong>
+      <span>Clubs étudiés</span>
+    </div>
+    <div class="bubble bubble-2">
+      <strong>6</strong>
+      <span>Cantons représentés</span>
+    </div>
+    <div class="bubble bubble-3">
+      <strong>+10</strong>
+      <span>Outils digitaux<br>analysés</span>
+    </div>
+    <div class="bubble bubble-4">
+      <strong>+4</strong>
+      <span>Ligues<br>considérées</span>
+    </div>
+  </div>
+</section>
+
+      <section>
+        <h1 class="benefits-title">Pourquoi devrais-je le télécharger ?</h1>
+        <div class="benefit-list">
+          <div class="benefit">
+            <img src="analyse-alt_14700716.svg" alt="Analyse" class="icon">
+            <h3><strong>Benchmark inédit</strong></h3>
+            <p>Comparaison des pratiques digitales de clubs amateurs et semi-professionnels.</p>
+          </div>
+          <div class="benefit">
+            <img src="instagram-logo.svg" alt="Instagram" class="icon">
+            <h3><strong>Réseaux et Sites web</strong></h3>
+            <p>Analyse des contenus, de l’engagement et de la visibilité.</p>
+          </div>
+          <div class="benefit">
+          <img src="brain.svg" alt="Insights" class="icon">
+            <h3><strong>Insights concrets</strong></h3>
+            <p>Forces, faiblesses et tendances communes du football
+              régional.</p>
+          </div>
+          <div class="benefit">
+            <img src="user-check.svg" alt="Professionnelle" class="icon">
+            <h3><strong>Approche professionnelle</strong></h3>
+            <p>Méthodologie inspirée des pratiques du marketing digital.</p>
+          </div>
+        </div><br>
+        <h2 class="free">Tout ceci <span class="free-word">gratuitement</span></h2>
+
+      </section>
+      <section class="trust">
+        <img src="pexels-tima-miroshnichenko-6077785.jpg" alt="Footballeur"
+          class="FootConfianceImg">
+        <h2 class="trustTitle">Vous pouvez nous faire confiance car…</h2>
+        <p class="texteTrust">Ce rapport s’appuie sur l’analyse complète de <span data-bind-global="count"></span> clubs et de dizaines
+          d’outils digitaux utilisés au quotidien, des méthodologie commune et
+          des sources vérifiables.
+          Vous y trouvez des pistes concrètes pour attirer plus de fans, mieux
+          communiquer et professionnaliser votre présence en ligne.
+          <br>
+          <a href="#downloadForm" class="informationsConfiance">En savoir plus</a>
+        </p>
+        
+      </section>
+      <section class="clubs">
+        <!-- data-bind-global="count" : Affiche le nombre total de rapports (métadonnées globales) -->
+      <h1 data-bind-global="count"></h1><h1 class="clubsTitle">  Clubs analysés en janvier 2026</h1>
+  
+        <section id="scroll-team-logo">
+        <div id="teamList"></div>
     </section>
 
-    <!-- id="messageContainer" : Conteneur pour afficher les messages de succès ou d'erreur. Le nom de cet ID ne doit pas être modifié. -->
-    <div id="messageContainer"></div>
+      <!-- id="teamList" : Conteneur où seront ajoutés dynamiquement les éléments de l'équipe. Le nom de cet ID ne doit pas être modifié. -->
+      <section id="teamList">
+      </section>
 
-    <!-- id="downloadForm" : Formulaire pour télécharger le PDF. Le nom de cet ID ne doit pas être modifié. -->
-    <form id="downloadForm">
-    </form>
+      <!-- id="messageContainer" : Conteneur pour afficher les messages de succès ou d'erreur. Le nom de cet ID ne doit pas être modifié. -->
+      <div id="messageContainer"></div>
 
-</body>
+
+      </section>
+
+      <section id="blablaformulaire">
+        <form id="downloadForm">
+        <h2>Télécharger le rapport complet</h2>
+        
+          <p>Recevez l'analyse détaillée de l'écosystème digital du football suisse directement dans votre boîte mail</p>
+        
+        <input type="text" name="lastName" placeholder="Nom" >
+        <input type="text" name="firstName" placeholder="Prénom" >
+        <input type="email" name="email" placeholder="Email" >
+        <input type="checkbox" name="newsletterAgreement" id="consent" >
+        
+        <label for="consent">J'accepte de recevoir la newsletter</label>
+        <button type="submit" id="downloadForm">Télécharger</button>
+      </form>
+      </section>
+    </main>
+  </body>
+
+  <footer>
+    <section>
+      <h1>Contact</h1>
+      <p>📧 rapport@football-digital.ch</p>
+      <p>Tel : xxx xxx xx xx</p>
+      <p>📍 Yverdon-les-Bains, Suisse</p>
+    </section>
+    <hr>
+    <p>© 2025 Écosystème Digital du Football Suisse. Tous droits réservés |
+      Respect de la propriété intellectuelle des
+      clubs analysés</p>
+  </footer>
 </html>

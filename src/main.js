@@ -223,6 +223,12 @@ async function loadPDFList() {
         })
       );
     });
+    
+    // Duplicate items for seamless looping animation
+    const clonedItems = Array.from(container.children);
+    clonedItems.forEach((item) => {
+      container.append(item.cloneNode(true));
+    });
   } catch (error) {
     console.error("Error loading PDF list:", error);
     showMessage("Erreur lors du chargement de la liste", "error");
@@ -317,7 +323,7 @@ async function handleFormSubmit(formData) {
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
-  
+  console.log("Form submitted");
   messageContainer.innerHTML = "";
   
   // Show initial loading state
