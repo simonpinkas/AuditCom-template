@@ -1,5 +1,216 @@
 @import "reset.css";
 
-img {
-    width: 250px;
+/* =========================
+   POLICES ET BASE
+========================= */
+body {
+    font-family: 'Inter', sans-serif; /* Police principale, moderne et lisible */
+    line-height: 1.6;                /* Hauteur de ligne confortable */
+    color: #333;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600; /* Titres visibles et hiérarchisés */
+}
+
+/* =========================
+   CARROUSEL LOGOS
+========================= */
+
+/* Wrapper visible du slider */
+.team-slider-wrapper {
+    overflow: hidden;       /* Cache les logos hors zone visible */
+    width: 100%;
+    padding: 1rem 0;
+    position: relative;
+
+    /* Effet fade sur les côtés */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+/* Slider horizontal */
+.team-slider {
+    display: flex;
+    gap: 5rem;                         /* espace entre les logos */
+    align-items: center;
+    animation: scroll-logos 25s linear infinite; /* tentative de défilement infini */
+}
+
+/* Chaque logo/article */
+.team-slider .team-item {
+    flex: 0 0 auto;         /* Empêche la réduction */
+    width: 120px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Logo */
+.team-slider .team-item img {
+    width: auto;
+    height: 90px;
+    object-fit: contain;
+}
+
+/* Nom sous le logo */
+.team-slider .team-item h2 {
+    font-size: 0.75rem;
+    line-height: 1.1;
+    max-width: 120px;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+/* Animation clé (ne fonctionne que si la piste est suffisamment longue) */
+@keyframes scroll-logos {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+
+/* =========================
+   ZOOM IMAGE AU HOVER
+========================= */
+
+/* Container pour gérer le zoom */
+.stats-placeholder {
+    overflow: hidden;        /* cache les parties de l'image qui débordent lors du zoom */
+    display: inline-block;   /* permet à l'image d'être centrée correctement */
+}
+
+/* Image qui va zoomer */
+.stats-placeholder .chiffres-illustration {
+    display: block;
+    width: 100%;            /* ajuste selon ton besoin */
+    height: auto;
+    transition: transform 0.5s ease; /* transition fluide du zoom */
+    transform-origin: center center; /* zoom centré sur le milieu */
+}
+
+/* Effet hover */
+.stats-placeholder:hover .chiffres-illustration {
+    transform: scale(1.1); /* zoom de 10%, tu peux ajuster */
+}
+
+
+
+
+
+
+/* =========================
+   RESPONSIVE (Mobile)
+========================= */
+@media (max-width: 768px) {
+    /* Slider logo */
+    .team-slider .team-item { width: 80px; }
+    .team-slider .team-item img { height: 60px; }
+    .team-slider-wrapper {
+        -webkit-mask-image: linear-gradient(to right, transparent 5%, black 95%, transparent 100%);
+        mask-image: linear-gradient(to right, transparent 5%, black 95%, transparent 100%);
+    }
+
+    /* Team-grid */
+    .team-grid { gap: 1rem; padding: 1rem 0.5rem; }
+    .team-grid img { height: 70px; }
+
+    /* Main / body */
+    main { width: 92%; }
+    body { margin: 2rem 0; }
+}
+
+/* =========================
+   GÉNÉRAL / AUTRES SECTIONS
+========================= */
+html { font-size: clamp(16px, 2.2vw, 24px); }
+
+main { width: 80%; margin: 0 auto; }
+
+.hero { position: relative; height: 90vh; margin-bottom: 20rem; }
+.hero h2 { text-align: center; }
+.hero-illustration { width: 100%; height: 90vh; object-fit: contain; opacity: 0.45; display: block; }
+.brand { position: absolute; left: 50%; top: 30%; transform: translate(-50%, -50%); font-size: clamp(2.5rem, 5vw, 10rem); z-index: 2; }
+
+.block-text { display: flex; flex-direction: column; justify-content: space-between; gap: 7rem; margin: 8rem 0; }
+.block-text > img { width: 320px; height: auto; flex-shrink: 0; object-fit: contain; }
+
+.row { display: flex; justify-content: space-between; align-items: center; gap: 4rem; }
+.row.reverse { flex-direction: row; }
+
+/* IMAGE COLLÉE AU BORD */
+.block-text .block-illustration {
+    width: 525px;                  /* taille de ton choix */
+    max-width: none;               /* enlève toute limite */
+    margin-left: calc(-50vw + 50%); /* colle l'image au bord gauche */
+    transition: transform 0.1s linear; /* rend le mouvement fluide */
+    will-change: transform;        /* optimise le rendu GPU */
+}
+
+/* IMAGE COLLÉE AU BORD DROITE */
+.row.reverse .block-illustration {
+    width: 500px;                     /* taille de ton choix */
+    max-width: none;                  /* enlève toute limite */
+    margin-right: calc(-50vw + 50%);  /* colle l'image au bord droit */
+    transition: transform 0.1s linear; /* mouvement fluide */
+    will-change: transform;           /* optimisation GPU */
+}
+
+/* ESPACE ENTRE TEXTE ET IMAGE */
+.row.reverse .text-droite {
+    margin-left: 2.5rem; /* espace entre texte et image */
+    max-width: 500px;    /* optionnel: limite la largeur du texte */
+}
+
+
+
+.text-gauche { text-align: left; max-width: 620px; }
+.text-droite { text-align: left; max-width: 480px; margin-left: auto; }
+
+.chiffres-illustration { width: 100%; margin: 5rem 0; }
+
+.teams { margin: 8rem 0; }
+.teams h2 { text-align: center; font-size: 1rem; margin-bottom: 2rem; }
+
+.form-section { margin: 8rem auto; max-width: 420px; }
+#downloadForm { display: flex; flex-direction: column; gap: 1rem; }
+#downloadForm input[type="text"], #downloadForm input[type="email"] { padding: 0.75rem 1rem; font-size: 0.85rem; border-radius: 8px; border: 1px solid rgba(0,0,0,0.25); }
+#downloadForm button { padding: 0.9rem; border-radius: 999px; border: 1px solid rgba(0,0,0,0.3); background: none; cursor: pointer; }
+#downloadForm button:hover { background: rgba(0,0,0,0.05); }
+.checkbox { font-size: 0.75rem; display: flex; gap: 0.5rem; align-items: center; }
+
+#messageContainer .message { margin-bottom: 1rem; padding: 0.75rem; border-radius: 6px; }
+#messageContainer .success { background: rgba(0,150,0,0.1); }
+#messageContainer .error { background: rgba(180,0,0,0.1); }
+
+.site-footer { margin-top: 6rem; padding: 2rem 0; text-align: center; font-size: 0.85rem; opacity: 0.7; }
+
+/* =========================
+   MEDIA QUERY SUPPLEMENTAIRES
+========================= */
+@media (max-width: 768px) {
+    .hero { height: auto; margin-bottom: 6rem; }
+    .hero-illustration { height: auto; }
+    .brand { position: static; transform: none; text-align: center; margin-bottom: 1rem; }
+    .hero h2 { margin-top: 1rem; }
+
+    .block-text { gap: 3rem; margin: 4rem 0; }
+    .row { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+    .row.reverse { flex-direction: column; }
+    .block-illustration { width: 100%; max-width: 420px; flex: 0 0 auto; }
+    .text-gauche, .text-droite { max-width: 100%; margin-left: 0; }
+    .chiffres-illustration { margin: 2.5rem 0; }
+
+    .form-section { max-width: 100%; }
+    .teams h2 { font-size: 0.95rem; }
+}
+
+@media (max-width: 768px) {
+    .block-text .block-illustration {
+        transform: translateX(0) !important; /* pas de mouvement sur mobile */
+    }
 }

@@ -1,27 +1,241 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="description"
+        content="Analyse digitale des clubs romands : chiffres clés, insights et rapport complet à télécharger.">
+
+    <meta property="og:title" content="AuditCom — Présence digitale des clubs romands">
+    <meta property="og:description" content="Découvrez les chiffres clés et téléchargez le rapport complet.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://TON-USER.github.io/NOM-REPO/">
+    <meta property="og:image" content="https://TON-USER.github.io/NOM-REPO/images_siteweb/og-image.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AuditCom</title>
+
+<!-- Préconnexion à Google Fonts pour charger les polices plus rapidement -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Import de la police Inter (proche de Neues Haas Grotesk) avec plusieurs poids -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+
+
+
+    <link rel="stylesheet" href="css/style.css" />
     <script src="src/main.js" type="module" defer></script>
-
 </head>
+
 <body>
-    <!-- data-bind-global="count" : Affiche le nombre total de rapports (métadonnées globales) -->
-    <h1 data-bind-global="count"></h1>
-    
-    <!-- id="teamList" : Conteneur où seront ajoutés dynamiquement les éléments de l'équipe. Le nom de cet ID ne doit pas être modifié. -->
-    <section id="teamList">
-    </section>
 
-    <!-- id="messageContainer" : Conteneur pour afficher les messages de succès ou d'erreur. Le nom de cet ID ne doit pas être modifié. -->
-    <div id="messageContainer"></div>
+    <header class="hero">
+        <h1 class="brand">La présence digital des clubs Romands</h1>
+        <img src="images_siteweb/carlos-torres-oOt9hf8XGEQ-unsplash.png" alt="Illustration AuditCom"
+            class="hero-illustration" />
+        <h2>Boostez votre stratégie sport-business grâce à l'analyse digitale exclusive des clubs suisses romands</h2>
+    </header>
 
-    <!-- id="downloadForm" : Formulaire pour télécharger le PDF. Le nom de cet ID ne doit pas être modifié. -->
-    <form id="downloadForm">
-    </form>
+    <main>
+
+        <!-- INTRO -->
+        <section class="block-text">
+
+            <!-- Ligne 1 : texte seul -->
+            <div class="row">
+                <div class="text-gauche">
+                    <h2>28 clubs analysés</h2>
+                    <p>À l’ère du digital, l’engagement des supporters et la visibilité des partenaires se jouent en
+                        ligne.
+                        L’analyse de l’écosystème numérique n’est plus optionnelle : c’est un levier stratégique pour
+                        assurer la pérennité financière des clubs. Notre audit examine la performance digitale de plus
+                        de 30
+                        clubs suisses, en comparant leurs pratiques aux standards du marketing sportif. En analysant
+                        médias
+                        possédés, gagnés et partagés, nous montrons comment transformer une simple vitrine en une
+                        expérience
+                        immersive qui fédère la communauté et maximise la valeur des partenariats.
+                        Téléchargez ce rapport exclusif pour découvrir les clés d’une transition numérique réussie, du
+                        terrain de village à la Super League.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Ligne 2 : image + texte alignés -->
+            <div class="row">
+                <img src="images_siteweb/joueur03.jpeg" alt="joueur03" class="block-illustration">
+
+                <div class="text-droite">
+                    <h2>Dans ce rapport</h2>
+                    <p>
+                        Écosystème digital - Storytelling - Conversion - Engagement - Monétisation - Phygital - SEO -
+                        Responsive - Accessibilité - Performance - Super League - Pyramide du football - Ancrage
+                        régional -
+                        Swiss Football League - Méta-étude
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- LOGOS / LISTE DYNAMIQUE (AuditCom obligatoire) -->
+        <section class="teams">
+            <h2>
+                Analyses disponibles pour <span data-bind-global="count"></span> clubs
+            </h2>
+
+ <!-- WRAPPER POUR ANIMATION INFINIE DES LOGOS -->
+    <div class="team-slider-wrapper">
+        <!-- #teamList : conteneur déjà utilisé par le JS pour injecter les rapports -->
+        <!-- On ajoute ici la classe team-slider pour appliquer l'animation CSS -->
+        <section id="teamList" class="team-slider"></section>
+    </div>
+
+        </section>
+
+
+
+
+
+        
+
+        <!-- STATS 1 -->
+        <section class="stats-visual">
+            <h2>Chiffres les plus impactants des réseaux sociaux</h2>
+            <div class="stats-placeholder">
+                <img class="chiffres-illustration" src="images_siteweb/image_réseaux.jpeg"
+                    alt="statistique_réseaux"><!-- SVG/canvas -->
+            </div>
+        </section>
+
+       <section class="block-text"> <!-- Ligne 1 : image gauche / texte droite -->
+            <div class="row"> <img src="images_siteweb/10a58370-e729-4330-a4be-64feeb66d482 2.png"
+                    alt="2 joueur fond bleu" class="block-illustration">
+                <div class="text-gauche">
+                    <h2>450 millions</h2>
+                    <p>de francs suisses pour la construction de son nouveau stade à l'horizon 2030, pour le FC Sion</p>
+                </div>
+
+              
+
+
+   </div> <!-- Ligne 2 : texte gauche / image droite -->
+            <div class="row reverse">
+                <div class="text-droite">
+                    <h2>34 équipes</h2>
+                    <p>au sein du CS Chênois qui gère une structure massive</p>
+                </div> <img src="images_siteweb/5f06162b-4dd7-4616-a5d8-1f7d844e3432 2.png" alt="joueur fond vert"
+                    class="block-illustration">
+            </div>
+            
+            
+        </section>
+
+
+        <!-- STATS 2 (dans ta maquette: “Ancienneté”) -->
+        <section class="stats-visual">
+            <h2>Ancienneté des clubs</h2>
+            <div class="stats-placeholder">
+                <img class="chiffres-illustration" src="images_siteweb/image_Anciennete.jpeg" alt="Anciennete_club">
+                <!-- SVG/canvas -->
+            </div>
+        </section>
+
+        <section class="block-text">
+
+            <!-- Ligne 1 : image gauche / texte droite -->
+            <div class="row">
+                <img src="images_siteweb/yvsport 1.png" alt="joueur Yverdon" class="block-illustration">
+
+                <div class="text-gauche">
+                    <h2>150 000 visiteurs par an</h2>
+                    <p>sur le site internet officiel d'Yverdon Sport FC</p>
+                </div>
+            </div>
+
+            <!-- Ligne 2 : texte gauche / image droite -->
+            <div class="row reverse">
+                <div class="text-droite">
+                    <h2>12 700 places</h2>
+                    <p>au Stade de la Charrière ou évolue FC La Chaux-de-Fonds</p>
+                </div>
+
+                <img src="images_siteweb/f20cd427-1bd5-4c6a-9255-2af371edc2f3 1.png" alt="joueur fond jaune"
+                    class="block-illustration">
+            </div>
+
+        </section>
+
+
+        <section class="form-section">
+            <h2>Télécharger le rapport</h2>
+
+            <!-- Message injecté par le JS -->
+            <div id="messageContainer"></div>
+
+            <form id="downloadForm">
+                <input type="text" name="firstName" placeholder="Prénom" required />
+
+                <input type="text" name="lastName" placeholder="Nom" required />
+
+                <input type="email" name="email" placeholder="Email" required />
+
+                <label class="checkbox">
+                    <input type="checkbox" name="newsletterAgreement" required />
+                    J’accepte la newsletter
+                </label>
+
+                <button type="submit">Télécharger</button>
+            </form>
+        </section>
+
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <span>HEIG‑VD</span>
+            <span>•</span>
+            <span>Kristina Tomic</span>
+            <span>•</span>
+            <span>Lucas Lourenço Martins</span>
+        </div>
+    </footer>
+
+<script>
+// ============================
+// ANIMATION SCROLL HORIZONTALE DES IMAGES (avance et recule)
+// ============================
+
+const images = document.querySelectorAll('.block-illustration');
+
+window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY; // position verticale du scroll
+
+    images.forEach(img => {
+        const speedFactor = 0.05; // vitesse du mouvement
+
+        // Calcul de l'offset en fonction du scroll
+        let offset = scrollTop * speedFactor;
+
+        // Direction selon la ligne
+        if (img.closest('.row.reverse')) {
+            // Ligne inversée : mouvement vers la gauche
+            img.style.transform = `translateX(-${offset}px)`;
+        } else {
+            // Ligne normale : mouvement vers la droite
+            img.style.transform = `translateX(${offset}px)`;
+        }
+    });
+});
+</script>
 
 </body>
+
 </html>
