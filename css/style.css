@@ -73,75 +73,35 @@ h1, h2, h3, h4, h5, h6 {
     100% { transform: translateX(-50%); }
 }
 
+
 /* =========================
-   CARROUSEL TEAM-GRID (scroll manuel)
+   ZOOM IMAGE AU HOVER
 ========================= */
-.team-grid {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 2rem;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    padding: 1.5rem 1rem;
-    cursor: grab;
 
-    /* Effet fade sur les côtés */
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
-    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
-
-    scrollbar-width: thin; /* Firefox */
+/* Container pour gérer le zoom */
+.stats-placeholder {
+    overflow: hidden;        /* cache les parties de l'image qui débordent lors du zoom */
+    display: inline-block;   /* permet à l'image d'être centrée correctement */
 }
 
-.team-grid:active {
-    cursor: grabbing;
+/* Image qui va zoomer */
+.stats-placeholder .chiffres-illustration {
+    display: block;
+    width: 100%;            /* ajuste selon ton besoin */
+    height: auto;
+    transition: transform 0.5s ease; /* transition fluide du zoom */
+    transform-origin: center center; /* zoom centré sur le milieu */
 }
 
-.team-grid article {
-    flex: 0 0 auto;
-    scroll-snap-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 0.6rem;
-    padding: 0.5rem 0.75rem;
+/* Effet hover */
+.stats-placeholder:hover .chiffres-illustration {
+    transform: scale(1.1); /* zoom de 10%, tu peux ajuster */
 }
 
-/* Logo */
-.team-grid img {
-    height: 90px;
-    object-fit: contain;
-}
 
-/* Nom du club */
-.team-grid article h2 {
-    font-size: 0.85rem;
-    line-height: 1.2;
-    max-width: 180px;
-}
 
-/* On cache les infos secondaires */
-.team-grid article p {
-    display: none;
-}
 
-/* Scrollbar stylée (Chrome / Edge / Safari) */
-.team-grid::-webkit-scrollbar {
-    height: 12px;
-}
 
-.team-grid::-webkit-scrollbar-thumb {
-    border-radius: 999px;
-    background: rgba(0, 0, 0, 0.35);
-}
-
-.team-grid::-webkit-scrollbar-track {
-    border-radius: 999px;
-    background: rgba(0, 0, 0, 0.12);
-}
 
 /* =========================
    RESPONSIVE (Mobile)
@@ -182,7 +142,31 @@ main { width: 80%; margin: 0 auto; }
 .row { display: flex; justify-content: space-between; align-items: center; gap: 4rem; }
 .row.reverse { flex-direction: row; }
 
-.block-illustration { width: 320px; height: auto; object-fit: contain; flex-shrink: 0; }
+/* IMAGE COLLÉE AU BORD */
+.block-text .block-illustration {
+    width: 525px;                  /* taille de ton choix */
+    max-width: none;               /* enlève toute limite */
+    margin-left: calc(-50vw + 50%); /* colle l'image au bord gauche */
+    transition: transform 0.1s linear; /* rend le mouvement fluide */
+    will-change: transform;        /* optimise le rendu GPU */
+}
+
+/* IMAGE COLLÉE AU BORD DROITE */
+.row.reverse .block-illustration {
+    width: 500px;                     /* taille de ton choix */
+    max-width: none;                  /* enlève toute limite */
+    margin-right: calc(-50vw + 50%);  /* colle l'image au bord droit */
+    transition: transform 0.1s linear; /* mouvement fluide */
+    will-change: transform;           /* optimisation GPU */
+}
+
+/* ESPACE ENTRE TEXTE ET IMAGE */
+.row.reverse .text-droite {
+    margin-left: 2.5rem; /* espace entre texte et image */
+    max-width: 500px;    /* optionnel: limite la largeur du texte */
+}
+
+
 
 .text-gauche { text-align: left; max-width: 620px; }
 .text-droite { text-align: left; max-width: 480px; margin-left: auto; }
@@ -223,4 +207,10 @@ main { width: 80%; margin: 0 auto; }
 
     .form-section { max-width: 100%; }
     .teams h2 { font-size: 0.95rem; }
+}
+
+@media (max-width: 768px) {
+    .block-text .block-illustration {
+        transform: translateX(0) !important; /* pas de mouvement sur mobile */
+    }
 }

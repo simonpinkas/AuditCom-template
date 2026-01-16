@@ -114,14 +114,18 @@
             </div>
         </section>
 
-        <section class="block-text"> <!-- Ligne 1 : image gauche / texte droite -->
+       <section class="block-text"> <!-- Ligne 1 : image gauche / texte droite -->
             <div class="row"> <img src="images_siteweb/10a58370-e729-4330-a4be-64feeb66d482 2.png"
                     alt="2 joueur fond bleu" class="block-illustration">
                 <div class="text-gauche">
                     <h2>450 millions</h2>
                     <p>de francs suisses pour la construction de son nouveau stade à l'horizon 2030, pour le FC Sion</p>
                 </div>
-            </div> <!-- Ligne 2 : texte gauche / image droite -->
+
+              
+
+
+   </div> <!-- Ligne 2 : texte gauche / image droite -->
             <div class="row reverse">
                 <div class="text-droite">
                     <h2>34 équipes</h2>
@@ -129,7 +133,11 @@
                 </div> <img src="images_siteweb/5f06162b-4dd7-4616-a5d8-1f7d844e3432 2.png" alt="joueur fond vert"
                     class="block-illustration">
             </div>
+            
+            
         </section>
+
+
         <!-- STATS 2 (dans ta maquette: “Ancienneté”) -->
         <section class="stats-visual">
             <h2>Ancienneté des clubs</h2>
@@ -200,7 +208,33 @@
         </div>
     </footer>
 
+<script>
+// ============================
+// ANIMATION SCROLL HORIZONTALE DES IMAGES (avance et recule)
+// ============================
 
+const images = document.querySelectorAll('.block-illustration');
+
+window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY; // position verticale du scroll
+
+    images.forEach(img => {
+        const speedFactor = 0.05; // vitesse du mouvement
+
+        // Calcul de l'offset en fonction du scroll
+        let offset = scrollTop * speedFactor;
+
+        // Direction selon la ligne
+        if (img.closest('.row.reverse')) {
+            // Ligne inversée : mouvement vers la gauche
+            img.style.transform = `translateX(-${offset}px)`;
+        } else {
+            // Ligne normale : mouvement vers la droite
+            img.style.transform = `translateX(${offset}px)`;
+        }
+    });
+});
+</script>
 
 </body>
 
