@@ -47,19 +47,18 @@
             <!-- Ligne 1 : texte seul -->
             <div class="row">
                 <div class="row reveal-up">
+                    <div class="text-gauche reveal-up">
+                        <h2 class="centered-title">28 clubs analysés</h2>
+                        <p>
+                            À l’ère du digital, l’engagement des supporters et la visibilité des partenaires se jouent en ligne.
+                            L’analyse de l’écosystème numérique n’est plus optionnelle : c’est un levier stratégique pour
+                            assurer la pérennité financière des clubs. Notre audit examine la performance digitale de plus
+                            de 30 clubs suisses, en comparant leurs pratiques aux standards du marketing sportif...
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-             <div class="text-gauche reveal-up">
-        <h2>28 clubs analysés</h2>
-        <p>
-            À l’ère du digital, l’engagement des supporters et la visibilité des partenaires se jouent en ligne.
-            L’analyse de l’écosystème numérique n’est plus optionnelle : c’est un levier stratégique pour
-            assurer la pérennité financière des clubs. Notre audit examine la performance digitale de plus
-            de 30 clubs suisses, en comparant leurs pratiques aux standards du marketing sportif...
-        </p>
-    </div>
-        </div>
-
-</div>
             <!-- Ligne 2 : image + texte alignés -->
             <div class="row">
                 <img src="images_siteweb/joueur03.jpeg" alt="joueur03" class="block-illustration">
@@ -75,7 +74,7 @@
 
         <!-- LOGOS -->
         <section class="teams">
-            <h2>Analyses disponibles pour <span data-bind-global="count"></span> clubs</h2>
+            <h2 class="centered-title">Analyses disponibles pour <span data-bind-global="count"></span> clubs</h2>
             <div class="team-slider-wrapper">
                 <section id="teamList" class="team-slider"></section>
             </div>
@@ -83,7 +82,7 @@
 
         <!-- STATS 1 -->
         <section class="stats-visual">
-            <h2>Chiffres les plus impactants des réseaux sociaux</h2>
+            <h2 class="centered-title">Chiffres les plus impactants des réseaux sociaux</h2>
             <div class="stats-placeholder">
                 <img class="chiffres-illustration" src="images_siteweb/image_réseaux.jpeg" alt="statistique_réseaux">
             </div>
@@ -115,7 +114,7 @@
 
         <!-- STATS 2 -->
         <section class="stats-visual">
-            <h2>Ancienneté des clubs</h2>
+            <h2 class="centered-title">Ancienneté des clubs</h2>
             <div class="stats-placeholder">
                 <img class="chiffres-illustration" src="images_siteweb/image_Anciennete.jpeg" alt="Anciennete_club">
             </div>
@@ -189,9 +188,6 @@
         </div>
     </footer>
 
-   
-
-
     <!-- TEMPLATE MESSAGE FORMULAIRE -->
     <template id="messageItem">
         <div data-bind-attr-class="messageClass" class="message">
@@ -199,35 +195,27 @@
         </div>
     </template>
 
+    <script>
+        /* ZOOM IMAGE AU SCROLL */
+        const images = document.querySelectorAll('.block-illustration');
 
-<script>
-/* =========================
-   ZOOM IMAGE AU SCROLL
-========================= */
-
-const images = document.querySelectorAll('.block-illustration');
-
-const observer = new IntersectionObserver(
-    (entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
-            } else {
-                entry.target.classList.remove('is-visible');
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    } else {
+                        entry.target.classList.remove('is-visible');
+                    }
+                });
+            },
+            {
+                threshold: 0.5
             }
-        });
-    },
-    {
-        threshold: 0.5   // 50% de l’image visible → zoom
-    }
-);
+        );
 
-// Observe toutes les images
-images.forEach(img => observer.observe(img));
-</script>
-
-
+        images.forEach(img => observer.observe(img));
+    </script>
 
 </body>
-
 </html>
