@@ -12,7 +12,8 @@ body {
 }
 
 html {
-    font-size: clamp(16px, 2.2vw, 24px); /* Police adaptative */
+    font-size: clamp(16px, 2.2vw, 24px);
+    /* Police adaptative */
 }
 
 main {
@@ -40,7 +41,7 @@ main {
     left: 50%;
     top: 30%;
     transform: translate(-50%, -50%);
-    font-size: clamp(2.5rem, 5vw, 10rem);
+    font-size: clamp(1.5rem, 5vw, 10rem);
     z-index: 2;
 }
 
@@ -60,8 +61,13 @@ main {
 /* =========================
    TITRES
 ========================= */
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 600; 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 600;
     transition: transform 0.25s ease, color 0.25s ease;
     transform-origin: center;
 }
@@ -75,7 +81,7 @@ h3:hover {
 /* =========================
    ESPACEMENTS ENTRE SECTIONS
 ========================= */
-main > section {
+main>section {
     margin-block: clamp(4rem, 10vh, 10rem);
 }
 
@@ -88,14 +94,19 @@ main > section {
    CENTRAGE TITRES SPÉCIFIQUES
 ========================= */
 /* Ne centre que les titres demandés */
-.stats-visual h2,                 /* Chiffres les plus impactants des réseaux sociaux */
-.parallel-paragraphs h2 {          /* Analyses disponibles pour 28 clubs / Ancienneté des clubs */
+.stats-visual h2,
+/* Chiffres les plus impactants des réseaux sociaux */
+.parallel-paragraphs h2 {
+    /* Analyses disponibles pour 28 clubs / Ancienneté des clubs */
     text-align: center;
 }
 
-
-
-
+.reveal-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+ 
 @media (prefers-reduced-motion: no-preference) {
     .reveal-up {
         animation: revealUp linear forwards;
@@ -103,7 +114,7 @@ main > section {
         animation-range: entry 20% cover 40%;
     }
 }
-
+ 
 @keyframes revealUp {
     from { opacity: 0; transform: translateY(40px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -141,8 +152,16 @@ main > section {
     margin-left: 0.5rem;
 }
 
-.text-gauche { text-align: left; max-width: 620px; }
-.text-droite { text-align: left; max-width: 480px; margin-left: auto; }
+.text-gauche {
+    text-align: left;
+    max-width: 620px;
+}
+
+.text-droite {
+    text-align: left;
+    max-width: 480px;
+    margin-left: auto;
+}
 
 .block-illustration {
     width: clamp(200px, 30%, 525px);
@@ -239,8 +258,13 @@ main > section {
 }
 
 @keyframes scroll-logos {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 
@@ -281,13 +305,13 @@ main > section {
     font-weight: 600;
     border-radius: 8px;
     text-decoration: none;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .cta-button:hover {
     transform: scale(1.15);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 /* =========================
@@ -299,7 +323,7 @@ main > section {
     padding: 2rem;
     background-color: #fff;
     border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
@@ -318,13 +342,13 @@ main > section {
     padding: 0.75rem 1rem;
     font-size: 0.9rem;
     border-radius: 10px;
-    border: 1px solid rgba(0,0,0,0.2);
+    border: 1px solid rgba(0, 0, 0, 0.2);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 #downloadForm input:focus {
     border-color: #e63946;
-    box-shadow: 0 0 0 3px rgba(230,57,70,0.2);
+    box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.2);
     outline: none;
 }
 
@@ -397,24 +421,77 @@ main > section {
    RESPONSIVE
 ========================= */
 @media (max-width: 768px) {
-    main { width: 92%; }
-    body { margin: 2rem 0; }
+    main {
+        width: 92%;
+    }
 
-    .hero { height: auto; margin-bottom: 6rem; }
-    .hero-illustration { height: auto; }
-    .brand { position: static; transform: none; text-align: center; margin-bottom: 1rem; }
-    .hero h2 { margin-top: 1rem; }
+    body {
+        margin: 2rem 0;
+    }
 
-    .block-text { gap: 3rem; margin: 4rem 0; }
-    .row { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
-    .row.reverse { flex-direction: column; }
-    .block-illustration { width: 100%; max-width: 420px; flex: 0 0 auto !important; transform: translateX(0) !important; }
-    .text-gauche, .text-droite { max-width: 100%; margin-left: 0; }
+    .hero {
+        height: auto;
+        margin-bottom: 6rem;
+    }
 
-    .parallel-paragraphs .row { flex-direction: column; gap: 2rem; }
+    .hero-illustration {
+        height: auto;
+    }
 
-    .form-section { max-width: 90%; padding: 1.5rem; }
-    #downloadForm button { min-width: 100%; }
+    .brand {
+        position: static;
+        transform: none;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
 
-    .teams h2 { font-size: 0.95rem; }
+    .hero h2 {
+        margin-top: 1rem;
+    }
+
+    .block-text {
+        gap: 3rem;
+        margin: 4rem 0;
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.25rem;
+    }
+
+    .row.reverse {
+        flex-direction: column;
+    }
+
+    .block-illustration {
+        width: 100%;
+        max-width: 420px;
+        flex: 0 0 auto !important;
+        transform: translateX(0) !important;
+    }
+
+    .text-gauche,
+    .text-droite {
+        max-width: 100%;
+        margin-left: 0;
+    }
+
+    .parallel-paragraphs .row {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .form-section {
+        max-width: 90%;
+        padding: 1.5rem;
+    }
+
+    #downloadForm button {
+        min-width: 100%;
+    }
+
+    .teams h2 {
+        font-size: 0.95rem;
+    }
 }
