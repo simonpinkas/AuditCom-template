@@ -92,8 +92,14 @@ main > section {
     text-align: center;
 }
 
-
-
+/* =========================
+   ANIMATION TEXTE "REVEAL UP"
+========================= */
+.reveal-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
 
 @media (prefers-reduced-motion: no-preference) {
     .reveal-up {
@@ -194,9 +200,6 @@ main > section {
     z-index: 10;
 }
 
-/* =========================
-   CARROUSEL LOGOS
-========================= */
 .team-slider-wrapper {
     overflow: hidden;
     width: 100%;
@@ -241,6 +244,7 @@ main > section {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
 }
+
 
 
 
