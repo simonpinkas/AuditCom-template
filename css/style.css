@@ -93,14 +93,8 @@ main > section {
     text-align: center;
 }
 
-/* =========================
-   ANIMATION TEXTE "REVEAL UP"
-========================= */
-.reveal-up {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
+
+
 
 @media (prefers-reduced-motion: no-preference) {
     .reveal-up {
@@ -249,25 +243,7 @@ main > section {
     100% { transform: translateX(-50%); }
 }
 
-/* =========================
-   STATS IMAGE HOVER ZOOM
-========================= */
-.stats-placeholder {
-    overflow: hidden;
-    display: inline-block;
-}
 
-.stats-placeholder .chiffres-illustration {
-    display: block;
-    width: 100%;
-    height: auto;
-    transition: transform 0.5s ease;
-    transform-origin: center center;
-}
-
-.stats-placeholder:hover .chiffres-illustration {
-    transform: scale(1.1);
-}
 
 /* =========================
    CTA / TÉLÉCHARGEMENT
