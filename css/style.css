@@ -109,6 +109,7 @@ main>section {
     transform: translateY(40px);
     transition: opacity 0.8s ease, transform 0.8s ease;
 }
+
 @media (prefers-reduced-motion: no-preference) {
     .reveal-up {
         animation: revealUp linear forwards;
@@ -116,10 +117,17 @@ main>section {
         animation-range: entry 20% cover 40%;
     }
 }
- 
+
 @keyframes revealUp {
-    from { opacity: 0; transform: translateY(40px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
@@ -231,8 +239,16 @@ main>section {
     display: flex;
     gap: 5rem;
     align-items: center;
-    animation: scroll-logos 25s linear infinite;
+    animation: scroll-logos 25s linear infinite alternate;
 }
+
+/* Stop l'animation quand on survole la zone du slider */
+.team-slider-wrapper:hover .team-slider {
+  animation-play-state: paused;
+}
+
+
+
 
 .team-slider .team-item {
     flex: 0 0 auto;
@@ -264,7 +280,7 @@ main>section {
     }
 
     100% {
-        transform: translateX(-50%);
+        transform: translateX(-690%);
     }
 }
 
