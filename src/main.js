@@ -317,7 +317,7 @@ async function handleFormSubmit(formData) {
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
-  
+  console.log("Form submitted");
   messageContainer.innerHTML = "";
   
   // Show initial loading state

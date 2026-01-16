@@ -1,5 +1,684 @@
 @import "reset.css";
+/* =====================
+   BASE GLOBALE
+===================== */
 
-img {
-    width: 250px;
+
+* {     
+    margin: 0;     
+    padding: 0;     
+    box-sizing: border-box; 
+    
+} 
+body {
+  margin: 0;
+  font-family: "League Spartan", sans-serif;
+  color: #2b2b2b;
+  line-height: 1.6;
+  background-color:#542B25;
 }
+
+h1, h2, h3 {
+  margin-top: 0;
+  font-weight: 500;
+}
+
+section {
+  padding: 4rem 2rem;
+}
+
+a {
+  text-decoration: none;
+}
+header {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color : white;
+    text-align: left;
+}
+
+.hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  max-width: 700px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin-bottom: 2rem;
+}
+
+#bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    filter: brightness(90%); /* Pour que le texte soit lisible */
+}
+.btn-primary {
+    display: inline-block;
+    background-color: #fff;
+    color: #000;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-right: 890px;
+}
+
+
+/* SECTION MAQUETTE STATS */
+.stats-maquette {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;   /* gauche + droite */
+  min-height: 500px;
+  background-color: #ffffff;
+   margin: 0;
+  padding: 0;
+}
+
+/* Colonne gauche : fond blanc plein écran */
+.stats-left {
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 3rem;
+}
+
+.stats-left h2 {
+  font-family: "Arial", Helvetica, sans-serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #3b1713; /* brun foncé proche du texte de la maquette */
+}
+
+/* Colonne droite : image + bulles */
+.stats-right {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Image ballon plein cadre à droite */
+.stats-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  margin-right: -200px;   /* pour coller à la maquette */
+}
+
+/* Style général des bulles */
+.bubble {
+  position: absolute;
+  background-color: rgba(79, 127, 93, 0.7);          /* vert comme la maquette */
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #BEDACB;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  transform: scale(1);
+  transition: transform 0.2s ease-in-out;
+}
+/* quand on passe la souris */
+.bubble:hover {
+  transform: scale(1.15);   /* agrandit cercle + texte */
+  z-index: 5;               /* passe devant les autres si ça se chevauche */
+}
+
+.bubble strong {
+  font-size: 7rem;
+  line-height: 1;
+  color: #BEDACB;
+}
+
+.bubble span {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 3.5rem;
+}
+
+/* Positionnement des bulles pour coller à la maquette */
+.bubble-1 {          /* 29 Clubs étudiés */
+  top: 17%;
+  left: 22%;
+}
+
+.bubble-2 {          /* 6 Cantons représentés */
+  top: 5%;
+  right: 30%;
+}
+
+.bubble-3 {          /* +10 Outils digitaux analysés */
+  top: 45%;
+  left: 5%;
+}
+
+.bubble-4 {          /* +4 Ligues considérées */
+  bottom: 2%;
+  left: 3%;
+}
+
+
+.benefits-title{
+    color :#ffffff;
+    text-align: right;
+    font-size: 2.5rem;
+}
+.free {
+  color: #ffffff;
+  text-align: center;
+  font-size: 2rem;          /* taille de base du titre */
+}
+
+.free-word {
+  font-size: 2.2rem;        /* plus grand que le reste */
+  font-weight: 700;         /* plus gras si tu veux */
+}
+
+.icon{
+  filter: brightness(0) invert(1); /* transforme en blanc */
+    text-align: center;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    width: 75px;
+    align-items: center;
+
+}
+
+
+.benefit-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+  
+}
+
+.benefit {
+  background-color: #AF8A84;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  color: #ffffff;
+   display: flex;
+  flex-direction: column;
+  align-items: center;   /* centre horizontalement icône + titre + texte */
+  text-align: center;    /* centre le texte */
+  font-size: 1.3rem;
+}
+
+.benefit h3 {
+  margin-bottom: 1.5rem;
+}
+
+.trust {
+  background-color: #ffffff;
+
+  display: grid;
+  grid-template : 100px auto / 1fr 1fr;
+  grid-template-areas:
+    "image title"
+    "image text";
+    height: 390px;
+    margin-top: 100px;
+    margin-bottom: 200px;
+}
+.FootConfianceImg{
+    grid-area: image;
+    width: 400px;
+    height: 550px;
+    margin: 0px;
+    object-fit: cover;
+    margin-top: -150px;
+    margin-left: -35px;
+}
+
+.trust h2 {
+  margin-bottom: 1rem;
+}
+.trustTitle{
+  text-align: right;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 2.5rem;
+}
+.texteTrust{
+    text-align: right;
+    font-size: 1.2rem;
+}
+
+
+.informationsConfiance {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #2f5d50;
+  font-weight: bold;
+}
+.informationsConfiance:hover {
+  text-decoration: underline;
+}
+.clubs {
+  background-color: #ffffff;
+  padding: 9rem 2rem 2rem auto;
+}
+.clubs h1 {
+  font-size: 3.2rem;
+  font-weight: bold;
+  color: #3b1713;
+  margin-bottom: 1rem;
+    text-align: left;
+    display: inline;
+    
+}
+
+.teamName{
+    font-size: 1.5rem;
+    margin-top: 50px;
+    color: #3b1713;
+    font-weight: 600;
+    align-items: bottom;
+}
+#teamList {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.2rem;
+    overflow-x: hidden;
+    align-items: bottom;
+}
+
+
+#downloadForm {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#blablaformulaire{
+  background-color :#ffffff;
+  text-align: center;
+  margin-top: -3rem;
+}
+
+
+#downloadForm input[type="text"],
+#downloadForm input[type="email"] {
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #e3e2e2;
+}
+
+#downloadForm button {
+  background-color: #2f5d50;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 250px;
+}
+
+#consent {
+  margin-right: 0.5rem;
+  display: inline;
+}
+footer {
+  background-color: #4a1f1a;
+  color: white;
+  padding: 3rem 2rem;
+}
+
+footer h1 {
+  font-size: 1.5rem;
+}
+
+footer hr {
+  margin: 2rem 0;
+  border: 0;
+  border-top: 1px solid rgba(255,255,255,0.3);
+}
+
+
+/* ==========================
+   SCROLL HORIZONTAL DES CLUBS
+========================== */
+
+#teamList {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  padding: 2rem 1rem;
+  scroll-snap-type: x mandatory;
+}
+
+/* Chaque club généré par le JS */
+#teamList > * {
+  flex: 0 0 auto;        /* empêche le retour à la ligne */
+  min-width: 140px;      /* taille raisonnable des blocs */
+  text-align: center;
+
+  scroll-snap-align: start;
+  width : 10px
+}
+
+
+@media (max-width: 768px) {
+   
+    /* HEADER MOBILE */
+    header {
+        height: 100vh;
+        min-height: 600px;
+        overflow: hidden;
+    }
+   
+    .hero {
+        padding: 2rem 1.5rem;
+        justify-content: flex-start;
+        padding-top: 6rem;
+    }
+   
+    .hero h1 {
+        font-size: 1.8rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+   
+    .hero p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+   
+    .btn-primary {
+        margin-right: 0;
+        align-self: flex-start;
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    }
+     #bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 100vw;
+    height: 100vh;
+
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+
+    z-index: -1;
+  }
+   
+    /* STATS SECTION MOBILE */
+    .stats-maquette {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        min-height: auto;
+        padding: 0;
+    }
+   
+    .stats-left {
+        justify-content: center;
+        padding: 2rem 1.5rem;
+        text-align: center;
+        order: 1;
+    }
+   
+    .stats-left h2 {
+        font-size: 1.8rem;
+        color: #3b1713;
+    }
+   
+    .stats-right {
+        min-height: 350px;
+        position: relative;
+        order: 2;
+    }
+   
+    .stats-bg {
+        margin-right: 0;
+        height: 100%;
+        object-fit: cover;
+    }
+   
+    /* Repositionnement des bulles en mobile */
+    .bubble {
+        width: 80px;
+        height: 80px;
+    }
+   
+    .bubble strong {
+        font-size: 2.6rem;
+    }
+   
+    .bubble span {
+        font-size: 0.7rem;
+        padding: 0 8px;
+        line-height: 1.2;
+    }
+   
+    .bubble-1 {
+        /* 29 Clubs étudiés - en haut au milieu */
+        top: 18%;
+        left: 25%;
+    }
+   
+    .bubble-2 {
+        /* 6 Cantons représentés - en haut à droite */
+        top: 6%;
+        right: 20%;
+    }
+   
+    .bubble-3 {
+        /* +10 Outils digitaux - milieux à gauche */
+        bottom: 20%;
+        left: 5%;
+    }
+   
+    .bubble-4 {
+        /* +4 Ligues considérées - en bas à gauche */
+        top: 85%;
+        left: 4%;
+        transform: translateY(-50%);
+    }
+   
+    /* BENEFITS SECTION MOBILE */
+    section {
+        padding: 3rem 1.5rem;
+    }
+   
+    .benefits-title {
+        text-align: center;
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+    }
+   
+    .benefit-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+   
+    .benefit {
+        padding: 1.5rem 1rem;
+        border-radius: 8px;
+        text-align: center;
+    }
+   
+    .benefit h3 {
+        font-size: 0.95rem;
+        margin-bottom: 0.5rem;
+    }
+   
+    .benefit p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+   
+    .free {
+        font-size: 1.4rem;
+        margin-top: 2rem;
+    }
+   
+    /* TRUST SECTION MOBILE */
+    .trust {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            "image"
+            "title"
+            "text";
+        height: auto;
+        margin-top: 3rem;
+        padding: 0;
+    }
+   
+    .FootConfianceImg {
+        width: 100%;
+        height: 250px;
+        margin: 0;
+        object-fit: cover;
+        grid-area: image;
+    }
+   
+    .trustTitle {
+        grid-area: title;
+        text-align: left;
+        padding: 1.5rem 1.5rem 0.5rem;
+        font-size: 1.4rem;
+    }
+   
+    .texteTrust {
+        grid-area: text;
+        text-align: left;
+        padding: 0 1.5rem 2rem;
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+   
+    .informationsConfiance {
+        display: block;
+        margin-top: 1rem;
+    }
+   
+    /* CLUBS SECTION MOBILE */
+    .clubs h2 {
+        font-size: 1.8rem;
+        text-align: center;
+        margin-bottom: 2rem;
+        color: #3b1713;
+    }
+   
+    #teams-container, #teamList {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+   
+    .team-card {
+        padding: 1rem;
+        border-radius: 50%;
+        aspect-ratio: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #d5d5d5;
+        max-width: 150px;
+        margin: 0 auto;
+    }
+   
+    /* FORM SECTION MOBILE */
+    #blablaformulaire {
+        padding: 2rem 1.5rem;
+    }
+   
+    #blablaformulaire h2 {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+    }
+   
+    #blablaformulaire p {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+   
+    #downloadForm {
+        max-width: 100%;
+        padding: 0;
+    }
+   
+    #downloadForm input[type="text"],
+    #downloadForm input[type="email"] {
+        font-size: 1rem;
+        padding: 0.9rem;
+    }
+   
+    #downloadForm label {
+        font-size: 0.9rem;
+    }
+   
+    #downloadForm button {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+   
+    /* FOOTER MOBILE */
+    footer {
+        padding: 2rem 1.5rem;
+        text-align: center;
+    }
+   
+    footer h1 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+   
+    footer p {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+   
+    footer hr {
+        margin: 1.5rem 0;
+    }
+}
+
+
+
